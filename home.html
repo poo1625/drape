@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .banner {
+            background-color: #f3d7dc;
+            text-align: center;
+            padding: 35px 10px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 25px;
+        }
+
+        .product {
+            background: white;
+            width: 220px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #e63946;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #e63946;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Fashion Store</h1>
+        <p>Your Style, Your Fashion!</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Shop</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="banner" id="home">
+        <h2>New Fashion Collection</h2>
+        <p>Discover the latest styles at affordable prices!</p>
+    </section>
+
+    <h2 style="text-align:center;" id="products">
+        Our Products
+    </h2>
+
+    <section class="products">
+
+        <div class="product">
+            <img src="https://placehold.co/300x300?text=T-Shirt"
+                 alt="Casual T-shirt">
+            <h3>Casual T-Shirt</h3>
+            <p class="price">₹499</p>
+            <button onclick="addToCart('Casual T-Shirt', 499)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://placehold.co/300x300?text=Jeans"
+                 alt="Blue jeans">
+            <h3>Blue Jeans</h3>
+            <p class="price">₹999</p>
+            <button onclick="addToCart('Blue Jeans', 999)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://placehold.co/300x300?text=Dress"
+                 alt="Women's dress">
+            <h3>Women's Dress</h3>
+            <p class="price">₹1,299</p>
+            <button onclick="addToCart('Women\'s Dress', 1299)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://placehold.co/300x300?text=Jacket"
+                 alt="Fashion jacket">
+            <h3>Fashion Jacket</h3>
+            <p class="price">₹1,499</p>
+            <button onclick="addToCart('Fashion Jacket', 1499)">
+                Add to Cart
+            </button>
+        </div>
+
+    </section>
+
+    <h2 style="text-align:center;">
+        Cart Total: ₹<span id="total">0</span>
+    </h2>
+
+    <footer id="contact">
+        <p>Contact: support@fashionstore.com</p>
+        <p>&copy; 2026 Fashion Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let total = 0;
+
+        function addToCart(name, price) {
+            total += price;
+            document.getElementById("total").textContent = total;
+
+            alert(name + " added to cart!");
+        }
+    </script>
+
+</body>
+</html>
